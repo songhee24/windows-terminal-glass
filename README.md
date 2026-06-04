@@ -2,8 +2,10 @@
 
 A fancy, iOS-style **glassmorphism** Windows Terminal config: frosted acrylic blur,
 [Catppuccin Mocha](https://github.com/catppuccin/catppuccin) colors, the
-[JetBrainsMono Nerd Font](https://www.nerdfonts.com/), and a
-[fastfetch](https://github.com/fastfetch-cli/fastfetch) system banner on startup.
+[JetBrainsMono Nerd Font](https://www.nerdfonts.com/), a
+[fastfetch](https://github.com/fastfetch-cli/fastfetch) system banner,
+[eza](https://github.com/eza-community/eza) file icons, and an
+[Oh My Posh](https://ohmyposh.dev/) git-aware prompt.
 
 > Built and tested on **Windows 11 (25H2)** with **Windows Terminal 1.24** and
 > **Windows PowerShell 5.1**.
@@ -17,6 +19,9 @@ A fancy, iOS-style **glassmorphism** Windows Terminal config: frosted acrylic bl
   "Loadex Night" scheme included but hidden — flip `"hidden": true` → `false` to use them).
 - **JetBrainsMono Nerd Font** at medium weight — ligatures + powerline/icon glyphs.
 - **fastfetch banner** with a Windows 11 logo and Nerd Font icons on every new tab.
+- **eza** as `ls` — file-type icons, colors, and git status in directory listings
+  (`ls`, `ll`, `la`, `lt` aliases).
+- **Oh My Posh** prompt with the Catppuccin Mocha theme — git branch, folder & OS icons.
 - **Frosted, translucent tab bar.**
 - Quality-of-life: hidden scrollbar, airy padding, bar cursor, opens in `%USERPROFILE%`.
 
@@ -28,7 +33,8 @@ A fancy, iOS-style **glassmorphism** Windows Terminal config: frosted acrylic bl
 |---|---|
 | `windows-terminal/settings.json` | The full Windows Terminal config. |
 | `fastfetch/config.jsonc` | Themed fastfetch config (logo, modules, icon keys). |
-| `powershell/profile-snippet.ps1` | Snippet that runs fastfetch on interactive startup. |
+| `oh-my-posh/catppuccin_mocha.omp.json` | Catppuccin Mocha prompt theme for Oh My Posh. |
+| `powershell/profile-snippet.ps1` | Profile blocks: fastfetch banner + eza aliases + Oh My Posh init. |
 
 ---
 
@@ -39,6 +45,8 @@ A fancy, iOS-style **glassmorphism** Windows Terminal config: frosted acrylic bl
 ```powershell
 winget install --id DEVCOM.JetBrainsMonoNerdFont --exact
 winget install --id Fastfetch-cli.Fastfetch --exact
+winget install --id eza-community.eza --exact
+winget install --id JanDeDobbeleer.OhMyPosh --exact
 ```
 
 > The Nerd Font registers under the family name **`JetBrainsMono NF`** (Windows
@@ -54,6 +62,10 @@ copy windows-terminal\settings.json `
 # fastfetch config
 New-Item -ItemType Directory -Force "$env:USERPROFILE\.config\fastfetch" | Out-Null
 copy fastfetch\config.jsonc "$env:USERPROFILE\.config\fastfetch\config.jsonc"
+
+# Oh My Posh theme
+New-Item -ItemType Directory -Force "$env:USERPROFILE\.config\oh-my-posh" | Out-Null
+copy oh-my-posh\catppuccin_mocha.omp.json "$env:USERPROFILE\.config\oh-my-posh\catppuccin_mocha.omp.json"
 ```
 
 ### 3. Wire fastfetch into your PowerShell profile
