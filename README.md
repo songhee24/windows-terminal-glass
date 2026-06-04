@@ -1,0 +1,108 @@
+# 🪟✟ Windows Terminal — Glassmorphism Setup
+
+A fancy, iOS-style **glassmorphism** Windows Terminal config: frosted acrylic blur,
+[Catppuccin Mocha](https://github.com/catppuccin/catppuccin) colors, the
+[JetBrainsMono Nerd Font](https://www.nerdfonts.com/), and a
+[fastfetch](https://github.com/fastfetch-cli/fastfetch) system banner on startup.
+
+> Built and tested on **Windows 11 (25H2)** with **Windows Terminal 1.24** and
+> **Windows PowerShell 5.1**.
+
+---
+
+## ✨ What you get
+
+- **Frosted-glass panes** — translucent + acrylic blur (the "Catppuccin Glass" profile).
+- **Catppuccin Mocha** color scheme (plus Tokyo Night, Dracula, Gruvbox & a custom
+  "Loadex Night" scheme included but hidden — flip `"hidden": true` → `false` to use them).
+- **JetBrainsMono Nerd Font** at medium weight — ligatures + powerline/icon glyphs.
+- **fastfetch banner** with a Windows 11 logo and Nerd Font icons on every new tab.
+- **Frosted, translucent tab bar.**
+- Quality-of-life: hidden scrollbar, airy padding, bar cursor, opens in `%USERPROFILE%`.
+
+---
+
+## 📦 Repo contents
+
+| Path | What it is |
+|---|---|
+| `windows-terminal/settings.json` | The full Windows Terminal config. |
+| `fastfetch/config.jsonc` | Themed fastfetch config (logo, modules, icon keys). |
+| `powershell/profile-snippet.ps1` | Snippet that runs fastfetch on interactive startup. |
+
+---
+
+## 🚀 Install
+
+### 1. Install the prerequisites (winget)
+
+```powershell
+winget install --id DEVCOM.JetBrainsMonoNerdFont --exact
+winget install --id Fastfetch-cli.Fastfetch --exact
+```
+
+> The Nerd Font registers under the family name **`JetBrainsMono NF`** (Windows
+> truncates the long Nerd Font name). That's the `face` value used in the config.
+
+### 2. Drop the config files in place
+
+```powershell
+# Windows Terminal settings
+copy windows-terminal\settings.json `
+  "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
+
+# fastfetch config
+New-Item -ItemType Directory -Force "$env:USERPROFILE\.config\fastfetch" | Out-Null
+copy fastfetch\config.jsonc "$env:USERPROFILE\.config\fastfetch\config.jsonc"
+```
+
+### 3. Wire fastfetch into your PowerShell profile
+
+Append the contents of `powershell/profile-snippet.ps1` to your `$PROFILE`
+(see paths inside that file).
+
+### 4. ⚠️ Turn ON Windows "Transparency effects" — REQUIRED for the blur
+
+The acrylic/frosted-glass blur **will not render** unless Windows transparency
+effects are enabled. Without it, the terminal shows as a solid color.
+
+- **Settings:** Settings → Personalization → Colors → **Transparency effects = On**, or
+- **PowerShell:**
+  ```powershell
+  Set-ItemProperty 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize' `
+    -Name EnableTransparency -Value 1 -Type DWord
+  ```
+
+### 5. Restart Windows Terminal
+
+Open the **✟ Catppuccin Glass** profile (it's the default).
+
+---
+
+## 💡 Notes & gotchas
+
+- **Blur only renders when the window is FOCUSED.** Windows makes acrylic windows
+  solid when unfocused. The Glass profile sets an `unfocusedAppearance` so it stays
+  plain-transparent (instead of solid) when you click away.
+- **Screenshots:** `Win+Shift+S` steals focus → the terminal goes solid in the shot.
+  Use `Win+PrtScn` or `PrtScn` to capture the blur while the terminal stays focused.
+- **Glass needs something behind it.** A colorful wallpaper makes the frosted glass
+  look great; over a plain/dark background it just looks dark gray.
+- **Tuning transparency:** change `opacity` on the profile (0–100, lower = more
+  see-through). Tab-bar transparency lives in the `themes` → `Glass` → `tabRow`
+  `background` alpha (the last two hex digits, e.g. `…80` ≈ 50%).
+- **On laptops**, Energy/Battery Saver can disable transparency effects automatically.
+
+---
+
+## 🎨 Switching themes on the fly
+
+Hotkeys recolor the current tab (temporary):
+
+| Keys | Scheme |
+|---|---|
+| `Ctrl+Alt+1` | Catppuccin Mocha |
+| `Ctrl+Alt+2` | Tokyo Night |
+| `Ctrl+Alt+3` | Dracula |
+| `Ctrl+Alt+4` | Gruvbox Dark |
+| `Ctrl+Alt+5` | Loadex Night |

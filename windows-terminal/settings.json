@@ -1,0 +1,372 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": 
+    [
+        {
+            "command": 
+            {
+                "action": "setColorScheme",
+                "colorScheme": "Catppuccin Mocha"
+            },
+            "id": "User.setColorScheme.9E8F5DFB"
+        },
+        {
+            "command": 
+            {
+                "action": "setColorScheme",
+                "colorScheme": "Tokyo Night"
+            },
+            "id": "User.setColorScheme.93487342"
+        },
+        {
+            "command": 
+            {
+                "action": "setColorScheme",
+                "colorScheme": "Gruvbox Dark"
+            },
+            "id": "User.setColorScheme.49C21487"
+        },
+        {
+            "command": 
+            {
+                "action": "setColorScheme",
+                "colorScheme": "Dracula"
+            },
+            "id": "User.setColorScheme.3E3560CC"
+        },
+        {
+            "command": 
+            {
+                "action": "setColorScheme",
+                "colorScheme": "Loadex Night"
+            },
+            "id": "User.setColorScheme.B0377AE7"
+        }
+    ],
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{f1a2b3c4-0006-4aaa-bbbb-000000000006}",
+    "disableAnimations": false,
+    "keybindings": 
+    [
+        {
+            "id": "Terminal.CopyToClipboard",
+            "keys": "ctrl+c"
+        },
+        {
+            "id": "Terminal.PasteFromClipboard",
+            "keys": "ctrl+v"
+        },
+        {
+            "id": "Terminal.DuplicatePaneAuto",
+            "keys": "alt+shift+d"
+        },
+        {
+            "id": "User.setColorScheme.9E8F5DFB",
+            "keys": "ctrl+alt+1"
+        },
+        {
+            "id": "User.setColorScheme.3E3560CC",
+            "keys": "ctrl+alt+3"
+        },
+        {
+            "id": "User.setColorScheme.93487342",
+            "keys": "ctrl+alt+2"
+        },
+        {
+            "id": "User.setColorScheme.49C21487",
+            "keys": "ctrl+alt+4"
+        },
+        {
+            "id": "User.setColorScheme.B0377AE7",
+            "keys": "ctrl+alt+5"
+        }
+    ],
+    "newTabMenu": 
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles": 
+    {
+        "defaults": 
+        {
+            "antialiasingMode": "grayscale",
+            "colorScheme": "Catppuccin Mocha",
+            "cursorShape": "bar",
+            "font": 
+            {
+                "face": "JetBrainsMono NF",
+                "size": 11,
+                "weight": "medium"
+            },
+            "opacity": 92,
+            "padding": "14",
+            "scrollbarState": "hidden",
+            "snapOnInput": true,
+            "startingDirectory": "%USERPROFILE%",
+            "useAcrylic": true
+        },
+        "list": 
+        [
+            {
+                "colorScheme": "Catppuccin Mocha",
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "guid": "{f1a2b3c4-0001-4aaa-bbbb-000000000001}",
+                "hidden": false,
+                "icon": "\ud83d\udc31",
+                "name": "PowerShell \u00b7 Catppuccin",
+                "tabColor": "#1E1E2E"
+            },
+            {
+                "colorScheme": "Catppuccin Mocha",
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "guid": "{f1a2b3c4-0006-4aaa-bbbb-000000000006}",
+                "hidden": false,
+                "icon": "✟",
+                "name": "PowerShell · Catppuccin Glass",
+                "opacity": 65,
+                "padding": "20",
+                "tabColor": "#1E1E2E",
+                "unfocusedAppearance":
+                {
+                    "opacity": 80,
+                    "useAcrylic": false
+                }
+            },
+            {
+                "colorScheme": "Tokyo Night",
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "guid": "{f1a2b3c4-0002-4aaa-bbbb-000000000002}",
+                "hidden": true,
+                "icon": "\ud83c\udf03",
+                "name": "PowerShell \u00b7 Tokyo Night",
+                "tabColor": "#1A1B26"
+            },
+            {
+                "colorScheme": "Dracula",
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "guid": "{f1a2b3c4-0003-4aaa-bbbb-000000000003}",
+                "hidden": true,
+                "icon": "\ud83e\udddb",
+                "name": "PowerShell \u00b7 Dracula",
+                "opacity": 85,
+                "tabColor": "#282A36"
+            },
+            {
+                "colorScheme": "Gruvbox Dark",
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "guid": "{f1a2b3c4-0004-4aaa-bbbb-000000000004}",
+                "hidden": true,
+                "icon": "\ud83c\udf42",
+                "name": "PowerShell \u00b7 Gruvbox",
+                "tabColor": "#282828"
+            },
+            {
+                "colorScheme": "Loadex Night",
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "guid": "{f1a2b3c4-0005-4aaa-bbbb-000000000005}",
+                "hidden": true,
+                "icon": "\u2728",
+                "name": "PowerShell \u00b7 Loadex Night",
+                "tabColor": "#0B0F1A"
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": true,
+                "name": "Windows PowerShell"
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "Command Prompt"
+            },
+            {
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "hidden": false,
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure"
+            },
+            {
+                "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
+                "hidden": false,
+                "name": "Git Bash",
+                "source": "Git"
+            }
+        ]
+    },
+    "schemes": 
+    [
+        {
+            "background": "#1E1E2E",
+            "black": "#45475A",
+            "blue": "#89B4FA",
+            "brightBlack": "#585B70",
+            "brightBlue": "#89B4FA",
+            "brightCyan": "#94E2D5",
+            "brightGreen": "#A6E3A1",
+            "brightPurple": "#F5C2E7",
+            "brightRed": "#F38BA8",
+            "brightWhite": "#A6ADC8",
+            "brightYellow": "#F9E2AF",
+            "cursorColor": "#F5E0DC",
+            "cyan": "#94E2D5",
+            "foreground": "#CDD6F4",
+            "green": "#A6E3A1",
+            "name": "Catppuccin Mocha",
+            "purple": "#F5C2E7",
+            "red": "#F38BA8",
+            "selectionBackground": "#585B70",
+            "white": "#BAC2DE",
+            "yellow": "#F9E2AF"
+        },
+        {
+            "background": "#000000",
+            "black": "#0C0C0C",
+            "blue": "#0037DA",
+            "brightBlack": "#767676",
+            "brightBlue": "#3B78FF",
+            "brightCyan": "#61D6D6",
+            "brightGreen": "#16C60C",
+            "brightPurple": "#B4009E",
+            "brightRed": "#E74856",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#F9F1A5",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#3A96DD",
+            "foreground": "#FFFFFF",
+            "green": "#13A10E",
+            "name": "Color Scheme 15",
+            "purple": "#881798",
+            "red": "#C50F1F",
+            "selectionBackground": "#FFFFFF",
+            "white": "#CCCCCC",
+            "yellow": "#C19C00"
+        },
+        {
+            "background": "#282A36",
+            "black": "#21222C",
+            "blue": "#BD93F9",
+            "brightBlack": "#6272A4",
+            "brightBlue": "#D6ACFF",
+            "brightCyan": "#A4FFFF",
+            "brightGreen": "#69FF94",
+            "brightPurple": "#FF92DF",
+            "brightRed": "#FF6E6E",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#FFFFA5",
+            "cursorColor": "#F8F8F2",
+            "cyan": "#8BE9FD",
+            "foreground": "#F8F8F2",
+            "green": "#50FA7B",
+            "name": "Dracula",
+            "purple": "#FF79C6",
+            "red": "#FF5555",
+            "selectionBackground": "#44475A",
+            "white": "#F8F8F2",
+            "yellow": "#F1FA8C"
+        },
+        {
+            "background": "#282828",
+            "black": "#282828",
+            "blue": "#458588",
+            "brightBlack": "#928374",
+            "brightBlue": "#83A598",
+            "brightCyan": "#8EC07C",
+            "brightGreen": "#B8BB26",
+            "brightPurple": "#D3869B",
+            "brightRed": "#FB4934",
+            "brightWhite": "#EBDBB2",
+            "brightYellow": "#FABD2F",
+            "cursorColor": "#EBDBB2",
+            "cyan": "#689D6A",
+            "foreground": "#EBDBB2",
+            "green": "#98971A",
+            "name": "Gruvbox Dark",
+            "purple": "#B16286",
+            "red": "#CC241D",
+            "selectionBackground": "#665C54",
+            "white": "#A89984",
+            "yellow": "#D79921"
+        },
+        {
+            "background": "#0B0F1A",
+            "black": "#10151F",
+            "blue": "#5CB8FF",
+            "brightBlack": "#3A4960",
+            "brightBlue": "#86CBFF",
+            "brightCyan": "#5EF0DC",
+            "brightGreen": "#73F0BD",
+            "brightPurple": "#DAB2F2",
+            "brightRed": "#FF8A9B",
+            "brightWhite": "#EAF1FB",
+            "brightYellow": "#FFD98A",
+            "cursorColor": "#36E0C8",
+            "cyan": "#36E0C8",
+            "foreground": "#D6E1F0",
+            "green": "#4BE3A2",
+            "name": "Loadex Night",
+            "purple": "#C792EA",
+            "red": "#FF6B81",
+            "selectionBackground": "#1F3A52",
+            "white": "#C3CDDE",
+            "yellow": "#FFCB6B"
+        },
+        {
+            "background": "#1A1B26",
+            "black": "#15161E",
+            "blue": "#7AA2F7",
+            "brightBlack": "#414868",
+            "brightBlue": "#7AA2F7",
+            "brightCyan": "#7DCFFF",
+            "brightGreen": "#9ECE6A",
+            "brightPurple": "#BB9AF7",
+            "brightRed": "#F7768E",
+            "brightWhite": "#C0CAF5",
+            "brightYellow": "#E0AF68",
+            "cursorColor": "#C0CAF5",
+            "cyan": "#7DCFFF",
+            "foreground": "#A9B1D6",
+            "green": "#9ECE6A",
+            "name": "Tokyo Night",
+            "purple": "#BB9AF7",
+            "red": "#F7768E",
+            "selectionBackground": "#33467C",
+            "white": "#A9B1D6",
+            "yellow": "#E0AF68"
+        }
+    ],
+    "tabWidthMode": "equal",
+    "theme": "Glass",
+    "themes": 
+    [
+        {
+            "name": "Glass",
+            "tab": 
+            {
+                "background": "#00000000",
+                "iconStyle": "default",
+                "showCloseButton": "always",
+                "unfocusedBackground": "#00000000"
+            },
+            "tabRow": 
+            {
+                "background": "#0A0A0F80",
+                "unfocusedBackground": "#0A0A0F4D"
+            },
+            "window": 
+            {
+                "applicationTheme": "dark",
+                "experimental.rainbowFrame": false,
+                "frame": null,
+                "unfocusedFrame": null,
+                "useMica": false
+            }
+        }
+    ],
+    "useAcrylicInTabRow": true
+}
