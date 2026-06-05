@@ -48,6 +48,7 @@
     "copyOnSelect": false,
     "defaultProfile": "{f1a2b3c4-0006-4aaa-bbbb-000000000006}",
     "disableAnimations": false,
+    "firstWindowPreference": "defaultProfile",
     "keybindings": 
     [
         {
@@ -127,13 +128,13 @@
                 "hidden": false,
                 "icon": "✟",
                 "name": "PowerShell · Catppuccin Glass",
-                "opacity": 65,
+                "opacity": 55,
                 "padding": "20",
                 "tabColor": "#1E1E2E",
                 "unfocusedAppearance":
                 {
-                    "opacity": 80,
-                    "useAcrylic": false
+                    "opacity": 55,
+                    "useAcrylic": true
                 }
             },
             {
@@ -353,10 +354,10 @@
                 "showCloseButton": "always",
                 "unfocusedBackground": "#00000000"
             },
-            "tabRow": 
+            "tabRow":
             {
-                "background": "#0A0A0F80",
-                "unfocusedBackground": "#0A0A0F4D"
+                "background": "#181825",
+                "unfocusedBackground": "#181825"
             },
             "window": 
             {
@@ -368,5 +369,5 @@
             }
         }
     ],
-    "useAcrylicInTabRow": true
+    "useAcrylicInTabRow": false
 }
