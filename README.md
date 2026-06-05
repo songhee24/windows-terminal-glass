@@ -22,6 +22,10 @@ A fancy, iOS-style **glassmorphism** Windows Terminal config: frosted acrylic bl
 - **eza** as `ls` — file-type icons, colors, and git status in directory listings
   (`ls`, `ll`, `la`, `lt` aliases).
 - **Oh My Posh** prompt with the Catppuccin Mocha theme — git branch, folder & OS icons.
+- **Git-aware Tab completion + fuzzy search** — [posh-git](https://github.com/dahlbyk/posh-git)
+  completes git subcommands & branch names, [PSReadLine](https://github.com/PowerShell/PSReadLine)
+  adds a Tab menu + gray inline autosuggest, and [PSFzf](https://github.com/kelleyma49/PSFzf) +
+  [fzf](https://github.com/junegunn/fzf) give fuzzy history/file/branch pickers.
 - **Frosted, translucent tab bar.**
 - Quality-of-life: hidden scrollbar, airy padding, bar cursor, opens in `%USERPROFILE%`.
 
@@ -34,7 +38,7 @@ A fancy, iOS-style **glassmorphism** Windows Terminal config: frosted acrylic bl
 | `windows-terminal/settings.json` | The full Windows Terminal config. |
 | `fastfetch/config.jsonc` | Themed fastfetch config (logo, modules, icon keys). |
 | `oh-my-posh/catppuccin_mocha.omp.json` | Catppuccin Mocha prompt theme for Oh My Posh. |
-| `powershell/profile-snippet.ps1` | Profile blocks: fastfetch banner + eza aliases + Oh My Posh init. |
+| `powershell/profile-snippet.ps1` | Profile blocks: fastfetch banner + eza aliases + Oh My Posh init + git completion & fuzzy search. |
 
 ---
 
@@ -47,10 +51,24 @@ winget install --id DEVCOM.JetBrainsMonoNerdFont --exact
 winget install --id Fastfetch-cli.Fastfetch --exact
 winget install --id eza-community.eza --exact
 winget install --id JanDeDobbeleer.OhMyPosh --exact
+winget install --id junegunn.fzf --exact            # fuzzy finder used by PSFzf
 ```
 
 > The Nerd Font registers under the family name **`JetBrainsMono NF`** (Windows
 > truncates the long Nerd Font name). That's the `face` value used in the config.
+
+For the **git completion + fuzzy search** block, also install these PowerShell modules
+(`CurrentUser` scope, no admin needed):
+
+```powershell
+Install-Module posh-git    -Scope CurrentUser -Force -SkipPublisherCheck
+Install-Module PSFzf       -Scope CurrentUser -Force -SkipPublisherCheck
+Install-Module PSReadLine  -Scope CurrentUser -Force -SkipPublisherCheck   # newer than the in-box 2.0.0
+```
+
+> If `fzf` isn't found after install, winget may have skipped its PATH shim (it needs
+> Developer Mode / admin for symlinks). Add its package folder to your user PATH, e.g.
+> `…\AppData\Local\Microsoft\WinGet\Packages\junegunn.fzf_*\`, then restart the terminal.
 
 ### 2. Drop the config files in place
 
@@ -118,3 +136,25 @@ Hotkeys recolor the current tab (temporary):
 | `Ctrl+Alt+3` | Dracula |
 | `Ctrl+Alt+4` | Gruvbox Dark |
 | `Ctrl+Alt+5` | Loadex Night |
+
+---
+
+## ⌨️ Git completion & fuzzy search
+
+Once the modules + `fzf` are installed and the profile snippet is loaded:
+
+| Action | How |
+|---|---|
+| Complete a git subcommand | `git che`<kbd>Tab</kbd> → `git checkout` |
+| Complete a **branch name** | `git checkout fea`<kbd>Tab</kbd> → cycles matching branches |
+| Pick from a completion **menu** | <kbd>Tab</kbd> opens a selectable menu (arrow keys) |
+| **Fuzzy branch switch** | type `fbr` → pick a branch (local + remote, newest first) |
+| Fuzzy branch picker inline | `git checkout **`<kbd>Tab</kbd> |
+| Fuzzy **command history** | <kbd>Ctrl</kbd>+<kbd>R</kbd> |
+| Fuzzy **file** insert | <kbd>Ctrl</kbd>+<kbd>T</kbd> |
+| Fuzzy **cd** into a dir | <kbd>Alt</kbd>+<kbd>C</kbd> |
+| Accept gray inline suggestion | <kbd>→</kbd> (RightArrow) |
+| History search by prefix | <kbd>↑</kbd> / <kbd>↓</kbd> after typing |
+
+> Prefer a dropdown list over gray inline text? Change `InlineView` → `ListView` in the
+> `Set-PSReadLineOption -PredictionViewStyle` line.
