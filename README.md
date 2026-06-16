@@ -1,5 +1,7 @@
 # 🪟✟ Windows Terminal — Glassmorphism Setup
 
+<img width="2698" height="1463" alt="image" src="https://github.com/user-attachments/assets/33e60e97-dfba-44e7-8ea5-5e5e48d9b5e7" />
+
 A fancy, iOS-style **glassmorphism** Windows Terminal config: frosted acrylic blur,
 [Catppuccin Mocha](https://github.com/catppuccin/catppuccin) colors, the
 [JetBrainsMono Nerd Font](https://www.nerdfonts.com/), a
