@@ -126,7 +126,7 @@
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
                 "guid": "{f1a2b3c4-0006-4aaa-bbbb-000000000006}",
                 "hidden": false,
-                "icon": "🤖",
+                "icon": "✟",
                 "name": "PowerShell · Catppuccin Glass",
                 "opacity": 55,
                 "padding": "20",
